@@ -1,17 +1,17 @@
 {
   "format": 1,
   "restore": {
-    "/app/HelloWorldApp/HelloWorldApp.csproj": {}
+    "/app/GreetingApi/GreetingApi.csproj": {}
   },
   "projects": {
-    "/app/HelloWorldApp/HelloWorldApp.csproj": {
+    "/app/GreetingApi/GreetingApi.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "/app/HelloWorldApp/HelloWorldApp.csproj",
-        "projectName": "HelloWorldApp",
-        "projectPath": "/app/HelloWorldApp/HelloWorldApp.csproj",
+        "projectUniqueName": "/app/GreetingApi/GreetingApi.csproj",
+        "projectName": "GreetingApi",
+        "projectPath": "/app/GreetingApi/GreetingApi.csproj",
         "packagesPath": "/home/swebot/.nuget/packages/",
-        "outputPath": "/app/HelloWorldApp/obj/",
+        "outputPath": "/app/GreetingApi/obj/",
         "projectStyle": "PackageReference",
         "configFilePaths": [
           "/home/swebot/.nuget/NuGet/NuGet.Config"
@@ -37,6 +37,16 @@
       "frameworks": {
         "net8.0": {
           "targetAlias": "net8.0",
+          "dependencies": {
+            "Microsoft.AspNetCore.OpenApi": {
+              "target": "Package",
+              "version": "[8.0.17, )"
+            },
+            "Swashbuckle.AspNetCore": {
+              "target": "Package",
+              "version": "[6.6.2, )"
+            }
+          },
           "imports": [
             "net461",
             "net462",
@@ -49,6 +59,9 @@
           "assetTargetFallback": true,
           "warn": true,
           "frameworkReferences": {
+            "Microsoft.AspNetCore.App": {
+              "privateAssets": "none"
+            },
             "Microsoft.NETCore.App": {
               "privateAssets": "all"
             }

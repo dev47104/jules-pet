@@ -1,0 +1,23 @@
+version: '3.8'
+
+services:
+  greetingapi:
+    build:
+      context: ./GreetingApi
+      dockerfile: Dockerfile
+    ports:
+      - "8080:8080" # Map host port 8080 to container port 8080 (HTTP)
+      - "8081:8081" # Map host port 8081 to container port 8081 (HTTPS)
+    environment:
+      - ASPNETCORE_ENVIRONMENT=Development
+      # In a real scenario, JWT settings should be configured securely,
+      # possibly through environment variables or secrets.
+      # For this example, we're relying on the hardcoded values in Program.cs,
+      # but you could override them here if they were read from IConfiguration.
+      # Example:
+      # - JWT_ISSUER=MyDockerComposeIssuer
+      # - JWT_AUDIENCE=MyDockerComposeAudience
+      # - JWT_SECRET_KEY=AStrongSecretKeyFromDockerCompose123!
+    # If you have a volume for persistent data or logs, you can define it here.
+    # volumes:
+    #   - ./logs:/app/logs
